@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const MainLayout = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="bg-orange-700 text-white shadow-md">
+      {/* <header className="bg-orange-700 text-white shadow-md">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <Link to="/home" className="flex items-center">
             <img 
@@ -24,13 +24,13 @@ const MainLayout = ({ children }) => {
             </button>
           </nav>
         </div>
-      </header>
+      </header> */}
       
       <main className="flex-grow">
         {children}
       </main>
       
-      <footer className="bg-orange-800 text-white py-8">
+      {/* <footer className="bg-orange-800 text-white py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between">
             <div className="mb-6 md:mb-0">
@@ -78,7 +78,7 @@ const MainLayout = ({ children }) => {
             <p>© {new Date().getFullYear()} PanditConnect. All rights reserved.</p>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 };

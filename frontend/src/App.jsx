@@ -29,9 +29,9 @@ function App() {
         {/* Protected Routes - add authentication check as needed */}
         <Route path="/home" element={
           // In a real app, you'd check auth status here
-          <MainLayout>
+         
             <HomePage />
-          </MainLayout>
+        
         } />
         
         {/* 404 Page */}
