@@ -59,7 +59,7 @@ const GetStartedPage = () => {
               className="w-24 h-24"
             />
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-orange-800 mb-2">PanditConnect</h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-orange-800 mb-2">PoojaPath...</h1>
           <p className="text-xl text-orange-700">Your spiritual journey begins here</p>
         </motion.header>
         
