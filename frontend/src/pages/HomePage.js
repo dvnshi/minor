@@ -8,6 +8,7 @@ const cities = [
 
 const HomePage = () => {
   const [selectedCity, setSelectedCity] = useState(null);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   return (
     <div>
@@ -43,13 +44,45 @@ const HomePage = () => {
           <nav>
             <ul className="flex space-x-6 items-center">
               {selectedCity && (
-                <li className="flex items-center space-x-2">
-                  <img
-                    src={selectedCity.image}
-                    alt={selectedCity.name}
-                    className="w-8 h-8 rounded-full"
-                  />
-                  <span className="font-medium">{selectedCity.name}</span>
+                <li className="relative">
+                  {/* City Display */}
+                  <div
+                    className="flex items-center space-x-2 cursor-pointer p-2 rounded-md hover:bg-orange-700 transition"
+                    onClick={() => setShowDropdown(!showDropdown)}
+                  >
+                    <img
+                      src={selectedCity.image}
+                      alt={selectedCity.name}
+                      className="w-8 h-8 rounded-full"
+                    />
+                    <span className="font-medium">{selectedCity.name}</span>
+                    <span className="ml-2 text-xs bg-white text-orange-800 px-2 py-1 rounded-md">
+                      Change City
+                    </span>
+                  </div>
+
+                  {/* Dropdown */}
+                  {showDropdown && (
+                    <div className="absolute left-0 mt-2 bg-white text-black shadow-lg rounded-md p-3 w-48 z-50">
+                      {cities.map((city) => (
+                        <div
+                          key={city.name}
+                          className="flex items-center space-x-2 p-2 cursor-pointer rounded-md hover:bg-gray-200 transition"
+                          onClick={() => {
+                            setSelectedCity(city);
+                            setShowDropdown(false);
+                          }}
+                        >
+                          <img
+                            src={city.image}
+                            alt={city.name}
+                            className="w-6 h-6 rounded-full"
+                          />
+                          <span>{city.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </li>
               )}
               <li><a href="#" className="hover:text-yellow-300">Home</a></li>
