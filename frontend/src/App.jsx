@@ -9,7 +9,7 @@ import PanditRegisterForm from './pages/PanditRegisterForm';
 import LoginPage from './pages/LoginPage';
 import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
-
+import SeeAllPage from './pages/SeeAllPage';
 // Layout components
 import MainLayout from './layouts/MainLayout';
 
@@ -25,6 +25,8 @@ function App() {
         <Route path="/register/customer" element={<CustomerRegisterForm />} />
         <Route path="/register/pandit" element={<PanditRegisterForm />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/" element={<HomePage />} /> {/* Home Page */}
+        <Route path="/see-all" element={<SeeAllPage />} /> {/* See All Page */}
         
         {/* Protected Routes - add authentication check as needed */}
         <Route path="/home" element={
