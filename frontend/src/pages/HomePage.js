@@ -184,7 +184,7 @@ const HomePage = () => {
       {!selectedCity && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full text-center">
-            <h2 className="text-xl font-semibold mb-4">Select Your City</h2>
+            <h2 className="text-xl font-semibold mb-4">Select Your Area</h2>
             <div className="grid grid-cols-3 gap-4">
               {cities.map((city) => (
                 <div
