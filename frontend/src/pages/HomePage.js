@@ -115,19 +115,41 @@
 // export default HomePage;
 import React, { useState, useEffect } from 'react';
 import { FaPhone, FaCheck } from 'react-icons/fa'; // Import icons from react-icons
-import SeeAllPage from './SeeAllPage'
+import ShowMorePage from './ShowMorePage'
+import AllPoojaPage from './AllPoojaPage'
 import { Link } from 'react-router-dom';
-import Mandala from '../assets/mandala.png'
-import pooja1 from '../assets/pooja3.png';
+import panditji1 from '../assets/pandit3.webp';
+import panditji2 from '../assets/pandit4.webp';
 import pooja2 from '../assets/pooja.png';
+import Mandala from '../assets/mandala.png'
+import Logo from '../assets/logo2.png'
+import Saraswati from '../assets/saraswati_maa.png'
+import GrihaPravesh from '../assets/GreihPravesh.png'
+import Satyanarayankatha from '../assets/satyanarayan-katha.png'
+import Vivah from '../assets/vivah.png'
+import Lagna from '../assets/engagement.png'
+import Rudrabhishek from '../assets/rudraabhishekpooja.png'
+
+import Wedding from '../assets/wedding.jpg'
+import SatyanarayanPooja from '../assets/satyanarayan-pooja.png'
+import Griha from '../assets/grihaprevesh.jpg'
+import Ganeshji from '../assets/ganeshjipooja.jpg'
+
+  const services = [
+    { title: 'Griha Pravesh', description: 'Griha Pravesh (housewarming ceremony) is performed before entering a new home for the first time for positivity, prosperity, and blessings. Book trusted pandits in Bangalore, Delhi-NCR, Gurugram, Kolkata...', image: GrihaPravesh },
+    { title: 'Satyanarayan Katha', description: 'Satyanarayan Puja is done to seek blessings for prosperity, peace, and fulfillment of wishes. Book experienced pandits in Bangalore, Delhi-NCR, Gurugram, Kolkata, Pune, and Mumbai for Satyanarayan Ka...', image: Satyanarayankatha },
+    { title: 'Vivah', description: 'Vivah is a traditional Hindu wedding ceremony. It typically involves various rituals and customs, such as the exchange of vows and the tying of a sacred thread, known as the "mangalsutra," around', image: Vivah },
+    { title: 'Lagna Patrika (Engagement)', description: 'The Lagna Patrika ceremony is a pre-wedding ritual in Hindu culture where the families of the bride and groom exchange written letters to formalize the wedding date and other details...', image: Lagna },
+    { title: 'Rudrabhishek Puja', description: 'Rudrabhishek puja is a powerful ritual involving the holy bathing of a Shiva Linga. It removes negativity and brings blessings for peace. Book expert pandits in Bangalore, Delhi-NCR, Gurugram, Kolkata...', image: Rudrabhishek },
+    { title: 'Saraswati Puja', description: 'Saraswati Puja is a Hindu festival that is dedicated to the goddess of knowledge and wisdom, Saraswati. In many parts of India, this day is also celebrated as Basant Panchami...', image: Saraswati },
+  ];
+
 const cities = [
-  { name: "Bangalore", image: "/api/placeholder/100/100" },
-  { name: "Delhi", image: "/api/placeholder/100/100" },
-  { name: "Mumbai", image: "/api/placeholder/100/100" },
-  { name: "Chennai", image: "/api/placeholder/100/100" },
-  { name: "Kolkata", image: "/api/placeholder/100/100" },
-  { name: "Hyderabad", image: "/api/placeholder/100/100" },
+  { name: "Indore", image: "https://www.holidify.com/images/compressed/3551.jpg" },
+  { name: "Jabalpur", image: "https://www.tusktravel.com/blog/wp-content/uploads/2022/06/Dhuandhar-Waterfall-Madhya-Pradesh2.jpg" },
+  { name: "Bhopal", image: "https://th.bing.com/th/id/OIP._Rl7Fsyzk3mu697tm9r50wHaDz?rs=1&pid=ImgDetMain" },
 ];
+
 
 const HomePage = () => {
   // State for city selection
@@ -140,25 +162,25 @@ const HomePage = () => {
       id: 1,
       title: "Ganesh Chaturthi Special",
       description: "Book a pandit for Ganesh Chaturthi and get 10% off on pooja samagri",
-      image: "/api/placeholder/800/300",
+      image: Ganeshji,
     },
     {
       id: 2,
       title: "Satyanarayan Pooja Package",
       description: "Complete package including pandit, samagri, and prasad distribution",
-      image: "/api/placeholder/800/300",
+      image: SatyanarayanPooja,
     },
     {
       id: 3,
       title: "Wedding Season Offers",
       description: "Special discounts on wedding rituals and ceremonies",
-      image: "/api/placeholder/800/300",
+      image: Wedding,
     },
     {
       id: 4,
       title: "Grihapravesh Special",
       description: "Book a pandit for your new home ceremony with special offerings",
-      image: "/api/placeholder/800/300",
+      image: Griha,
     },
   ];
 
@@ -179,7 +201,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className="bg-orange-50 min-h-screen">
+    <div className="min-h-screen bg-gradient-to-b from-orange-50 to-yellow-100 overflow-hidden">
       {/* City Selection Popup */}
       {!selectedCity && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
@@ -269,20 +291,45 @@ const HomePage = () => {
       </header>
 
       {/* Hero Section with Mandala Background */}
-      <div className="bg-orange-50 py-12 relative overflow-hidden">
-        <div className="absolute left-0 top-0 opacity-10">
-          <div className="w-64 h-64 bg-contain bg-no-repeat" style={{backgroundImage: "url('../assets/mandala.png')"}}></div>
-        </div>
-        <div className="absolute right-0 bottom-0 opacity-10">
-          <div className="w-64 h-64 bg-contain bg-no-repeat" style={{backgroundImage: "url('../assets/mandala.png')"}}></div>
+      <div className="min-h-screen bg-gradient-to-b from-orange-50 to-yellow-100 overflow-hidden">
+        
+               {/* Background Elements - Mandala Patterns */}
+        <div className="fixed top-0 left-0 w-full h-full opacity-15">
+          <img  
+            src={Mandala} 
+            alt="Background Mandala"  
+            className="absolute -top-20 -left-20 w-64 h-64 rotate-12" 
+          /> 
+          <img  
+            src={Mandala} 
+            alt="Background Mandala"  
+            className="absolute top-1/3 -right-20 w-80 h-80 rotate-45" 
+          /> 
+          <img  
+            src={Mandala} 
+            alt="Background Mandala"  
+            className="absolute -bottom-20 left-1/4 w-72 h-72 -rotate-12" 
+          /> 
+          <img  
+            src={Mandala} 
+            alt="Background Mandala"  
+            className="absolute top-10 left-1/3 w-56 h-56 -rotate-45" 
+          /> 
         </div>
         
         <div className="container mx-auto max-w-6xl px-6 text-center relative z-10">
-          <div className="mb-6 flex justify-center">
+          {/* <div className="mb-6 flex justify-center">
             <div className="bg-orange-800 rounded-full p-4 inline-block">
               <span className="text-yellow-100 text-4xl">ॐ</span>
             </div>
-          </div>
+          </div> */}
+          <div className="flex justify-center items-center mb-4">
+                      <img 
+                        src={Logo}
+                        alt="PanditConnect Logo" 
+                        className="w-24 h-24"
+                      />
+                    </div>
           <h1 className="text-6xl font-bold text-orange-800 mb-2">PanditConnect</h1>
           <p className="text-xl text-orange-700 mb-12">Your spiritual journey begins here</p>
           
@@ -314,7 +361,7 @@ const HomePage = () => {
             </div>
             <div className="md:w-1/2">
               <img 
-                src={pooja1} 
+                src={panditji1} 
                 alt="Pandit performing ceremony" 
                 className="rounded-lg w-full h-auto object-cover"
               />
@@ -324,7 +371,7 @@ const HomePage = () => {
       </div>
       
       {/* Main Banner */}
-      <div className="bg-white py-8">
+      <div className="bg-yellow-100 py-8">
         <div className="container mx-auto max-w-6xl px-6">
           <div className="bg-white rounded-lg shadow-md p-6">
             <div className="flex flex-col md:flex-row items-center justify-between">
@@ -350,11 +397,11 @@ const HomePage = () => {
                 </button>
               </div>
               
-              <div className="mt-6 md:mt-0 md:w-1/3">
+              <div className="mt-6 md:mt-0 md:w-1/3 ">
                 <img 
-                  src={pooja2}
+                  src={panditji2}
                   alt="Pandit performing pooja" 
-                  className="w-full h-auto rounded-lg"
+                  className="w-full h-auto rounded-lg "
                 />
               </div>
             </div>
@@ -424,68 +471,40 @@ const HomePage = () => {
             Popular Pooja Services
           </h2>
 
-          {/* Service Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              'Griha Pravesh',
-              'Satyanarayan Pooja',
-              'Wedding Rituals',
-              'Ganesh Chaturthi',
-              'Navratri Special',
-              'Diwali Poojas',
-            ].map((service, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+          
+      {/* Services Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {services.map((service, index) => (
+          <div
+            key={index}
+            className="bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+          >
+            {/* Service Image */}
+            <div className="h-45 bg-orange-100 rounded-lg mb-6 flex items-center justify-center">
+              <img src={service.image} alt={service.title} className="h-full w-full" />
+            </div>
+
+            {/* Service Title */}
+            <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">
+              {service.title}
+            </h3>
+
+            {/* Service Description with "Show More" Link */}
+            <p className="text-gray-600 text-sm text-center"> 
+              {service.description}
+              <Link
+                to={`/show-more/${index}`}
+                className="text-orange-500 font-semibold hover:underline ml-1"
               >
-                {/* Service Icon */}
-                <div className="h-40 bg-orange-100 rounded-lg mb-6 flex items-center justify-center">
-                  <img
-                    src="/api/placeholder/80/80"
-                    alt={service}
-                    className="h-20 w-20"
-                  />
-                </div>
-
-                {/* Service Title */}
-                <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">
-                  {service}
-                </h3>
-
-                {/* Service Description */}
-                <p className="text-gray-600 text-sm text-center">
-                  Book experienced pandits for {service.toLowerCase()} ceremonies with ease and transparency.
-                </p>
-
-                {/* Show More Button */}
-                <button className="mt-6 bg-orange-500 hover:bg-orange-600 text-white py-2 px-6 rounded-full transition duration-300 w-full">
-                  Show More
-                </button>
-              </div>
-            ))}
+                Show more
+              </Link>
+            </p>
           </div>
-
-          {/* "See All" Button */}
-          <div className="mt-10 text-center">
-            <Link
-              to="/see-all"
-              className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white py-3 px-8 rounded-full transition duration-300"
-            >
-              <span className="mr-2">See All</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </Link>
+        ))}
+     
           </div>
+          
+
         </div>
       </div>
     </div>
@@ -542,7 +561,9 @@ const HomePage = () => {
           </p>
         </div>
       ))}
+
     </div>
+     
   </div>
 </div>
       
@@ -599,6 +620,7 @@ const HomePage = () => {
         </div>
       </footer>
     </div>
+    
   );
 };
 

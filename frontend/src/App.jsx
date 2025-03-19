@@ -9,7 +9,8 @@ import PanditRegisterForm from './pages/PanditRegisterForm';
 import LoginPage from './pages/LoginPage';
 import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
-import SeeAllPage from './pages/SeeAllPage';
+import ShowMorePage from './pages/ShowMorePage';
+import AllPoojaPage from './pages/AllPoojaPage';
 // Layout components
 import MainLayout from './layouts/MainLayout';
 
@@ -26,8 +27,8 @@ function App() {
         <Route path="/register/pandit" element={<PanditRegisterForm />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/" element={<HomePage />} /> {/* Home Page */}
-        <Route path="/see-all" element={<SeeAllPage />} /> {/* See All Page */}
-        
+         <Route path="/show-more/:index" element={<ShowMorePage />} />
+        <Route path="/all-pooja" element={<AllPoojaPage />} />
         {/* Protected Routes - add authentication check as needed */}
         <Route path="/home" element={
           // In a real app, you'd check auth status here
