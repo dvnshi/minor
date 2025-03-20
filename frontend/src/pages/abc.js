@@ -114,7 +114,6 @@
 
 // export default HomePage;
 import React, { useState, useEffect } from 'react';
-import Mandala from '../components/Mandala'
 import { FaPhone, FaCheck } from 'react-icons/fa'; // Import icons from react-icons
 import ShowMorePage from './ShowMorePage'
 import AllPoojaPage from './AllPoojaPage'
@@ -122,7 +121,7 @@ import { Link } from 'react-router-dom';
 import panditji1 from '../assets/pandit3.webp';
 import panditji2 from '../assets/pandit4.webp';
 import pooja2 from '../assets/pooja.png';
-// import Mandala from '../assets/mandala.png'
+import Mandala from '../assets/mandala.png'
 import Logo from '../assets/logo2.png'
 import Saraswati from '../assets/saraswati_maa.png'
 import GrihaPravesh from '../assets/GreihPravesh.png'
@@ -295,13 +294,29 @@ const HomePage = () => {
       <div className="min-h-screen bg-gradient-to-b from-orange-50 to-yellow-100 overflow-hidden">
         
                {/* Background Elements - Mandala Patterns */}
-               <Mandala/>
+        <div className="fixed top-0 left-0 w-full h-full opacity-15">
+          <img  
+            src={Mandala} 
+            alt="Background Mandala"  
+            className="absolute -top-20 -left-20 w-64 h-64 rotate-12" 
+          /> 
+          <img  
+            src={Mandala} 
+            alt="Background Mandala"  
+            className="absolute top-1/3 -right-20 w-80 h-80 rotate-45" 
+          /> 
+          <img  
+            src={Mandala} 
+            alt="Background Mandala"  
+            className="absolute -bottom-20 left-1/4 w-72 h-72 -rotate-12" 
+          /> 
+          <img  
+            src={Mandala} 
+            alt="Background Mandala"  
+            className="absolute top-10 left-1/3 w-56 h-56 -rotate-45" 
+          /> 
+        </div>
         
-
-
-         
-
-
         <div className="container mx-auto max-w-6xl px-6 text-center relative z-10">
           {/* <div className="mb-6 flex justify-center">
             <div className="bg-orange-800 rounded-full p-4 inline-block">
@@ -395,7 +410,7 @@ const HomePage = () => {
       </div>
       
       {/* Advertisement Slider */}
-      <div className="bg-yellow-100 py-8">
+      <div className="bg-orange-50 py-8">
         <div className="container mx-auto max-w-6xl px-6">
           <div className="bg-white rounded-lg shadow-md p-6">
             <h2 className="text-2xl font-bold text-gray-700 mb-6">Featured Services</h2>
@@ -448,7 +463,7 @@ const HomePage = () => {
       
       {/* Popular Services Section */}
 
-    <div className="bg-yellow-100 py-12">
+    <div className="bg-white py-12">
       <div className="container mx-auto max-w-6xl px-6">
         <div className="bg-white rounded-lg shadow-lg p-8">
           {/* Section Title */}
@@ -484,32 +499,11 @@ const HomePage = () => {
                 Show more
               </Link>
             </p>
-
-
           </div>
         ))}
-        </div>
-         {/* see all page  */}
-           <div className="w-full text-center">
-            <Link
-              to="/all-pooja"
-              className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white py-3 px-8 rounded-full transition duration-300"
-            >
-              <span className="mr-2">See All</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </Link>
+     
           </div>
+          
 
         </div>
       </div>
@@ -519,9 +513,8 @@ const HomePage = () => {
 
 
          {/* Why PoojaPath Section */}
-<div className="bg-yellow-100 py-12">
+<div className="bg-white py-12">
   <div className="container mx-auto max-w-6xl px-6">
-     <div className="bg-white rounded-lg shadow-md p-6">
     <div className="text-center mb-12">
       <h1 className="text-3xl font-bold text-orange-800 mb-4">Why Choose PoojaPath?</h1>
       <p className="text-gray-600 text-lg">
@@ -572,7 +565,6 @@ const HomePage = () => {
     </div>
      
   </div>
-</div>
 </div>
       
 
