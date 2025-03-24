@@ -13,7 +13,9 @@ import ShowMorePage from './pages/ShowMorePage';
 import AllPoojaPage from './pages/AllPoojaPage';
 // Layout components
 import MainLayout from './layouts/MainLayout';
-
+import ShowMorePage1 from './pages/ShowMorePage1';
+import ShowMorePage2 from './pages/ShowMorePage2';
+import ShowMorePage4 from './pages/ShowMorePage4';
 function App() {
   return (
     <Router>
@@ -27,7 +29,12 @@ function App() {
         <Route path="/register/pandit" element={<PanditRegisterForm />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/" element={<HomePage />} /> {/* Home Page */}
-         <Route path="/show-more/:index" element={<ShowMorePage />} />
+         <Route path="/show-more/0" element={<ShowMorePage />} />
+         <Route path="/show-more/1" element={<ShowMorePage1 />} />
+         <Route path="/show-more/2" element={<ShowMorePage2 />} />
+         
+         <Route path="/show-more/4" element={<ShowMorePage4 />} /> 
+
         <Route path="/all-pooja" element={<AllPoojaPage />} />
         {/* Protected Routes - add authentication check as needed */}
         <Route path="/home" element={
