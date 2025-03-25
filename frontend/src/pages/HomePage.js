@@ -455,7 +455,7 @@ const HomePage = () => {
           <h2 className="text-3xl font-bold text-orange-800 mb-8 text-center">
             Popular Pooja Services
           </h2>
-
+     
           
       {/* Services Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
