@@ -16,6 +16,16 @@ import MainLayout from './layouts/MainLayout';
 import ShowMorePage1 from './pages/ShowMorePage1';
 import ShowMorePage2 from './pages/ShowMorePage2';
 import ShowMorePage4 from './pages/ShowMorePage4';
+
+import PanditDashboard from './pages/PanditDashboard';
+
+import Bookings from './pages/panditpages/Bookings';
+import Calendar from './pages/panditpages/Calendar';
+import Earnings from './pages/panditpages/Earnings';
+import Profile from './pages/panditpages/Profile';
+import Support from './pages/panditpages/Support';
+
+
 function App() {
   return (
     <Router>
@@ -43,6 +53,22 @@ function App() {
             <HomePage />
         
         } />
+
+
+          {/* pandit start */}
+         <Route path="/pandit-dashboard" element={
+          // In a real app, you'd check auth status here
+         
+            <PanditDashboard />
+        
+        } />
+        <Route path="/bookings" element={<Bookings />} />
+        <Route path="/calendar" element={<Calendar />} />
+        <Route path="/earnings" element={<Earnings />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/support" element={<Support />} />
+        {/* pandit end */}
+
         
         {/* 404 Page */}
         <Route path="/404" element={<NotFoundPage />} />
