@@ -24,6 +24,7 @@ import Calendar from './pages/panditpages/Calendar';
 import Earnings from './pages/panditpages/Earnings';
 import Profile from './pages/panditpages/Profile';
 import Support from './pages/panditpages/Support';
+import LiveStreamPage from './pages/panditpages/LiveStreaming'
 
 
 function App() {
@@ -42,21 +43,20 @@ function App() {
          <Route path="/show-more/0" element={<ShowMorePage />} />
          <Route path="/show-more/1" element={<ShowMorePage1 />} />
          <Route path="/show-more/2" element={<ShowMorePage2 />} />
-         
          <Route path="/show-more/4" element={<ShowMorePage4 />} /> 
 
         <Route path="/all-pooja" element={<AllPoojaPage />} />
         {/* Protected Routes - add authentication check as needed */}
         <Route path="/home" element={
           // In a real app, you'd check auth status here
-         
+          
             <HomePage />
         
         } />
 
 
           {/* pandit start */}
-         <Route path="/pandit-dashboard" element={
+         {/* <Route path="/pandit-dashboard" element={
           // In a real app, you'd check auth status here
          
             <PanditDashboard />
@@ -67,6 +67,16 @@ function App() {
         <Route path="/earnings" element={<Earnings />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/support" element={<Support />} />
+        <Route path="live" element={<LiveStreamPage />} /> */}
+        <Route path="/pandit-dashboard" element={<PanditDashboard />}>
+  {/* <Route index element={<PanditHome />} /> */}
+  <Route path="calendar" element={<Calendar />} />
+  <Route path="live" element={<LiveStreamPage />} />
+  <Route path="bookings" element={<Bookings />} />
+  <Route path="earnings" element={<Earnings />} />
+  <Route path="profile" element={<Profile />} />
+  <Route path="support" element={<Support />} />
+</Route>
         {/* pandit end */}
 
         
