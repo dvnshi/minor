@@ -127,7 +127,7 @@ const CustomerRegisterForm = () => {
       existingUsers.push(userData);
       
       // Save back to localStorage
-      localStorage.setItem('panditConnectUsers', JSON.stringify(existingUsers));
+      localStorage.setItem('customer', JSON.stringify(existingUsers));
       
       // Save current user ID in separate item for "login" state
       localStorage.setItem('currentUserId', userData.id);
