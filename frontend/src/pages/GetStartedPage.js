@@ -125,7 +125,6 @@ const GetStartedPage = () => {
             </div>
           </div>
         </motion.div>
-        
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 50 }}
